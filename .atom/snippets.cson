@@ -1,0 +1,36 @@
+'.source.js':
+    'React Native Component':
+        'prefix': 'jrnc'
+        'body': """
+					import React, {PropTypes} from 'react'
+					import {View, Text, StyleSheet} from 'react-native'
+
+					const $1 = () => (
+						<View>
+							<Text>$1</Text>
+						</View>
+					)
+
+					$1.propTypes = {
+
+					}
+
+					export default $1
+        """
+		'React Component':
+        'prefix': 'jrc'
+        'body': """
+					import React, {PropTypes} from 'react'
+
+					const $1 = () => (
+						<div>
+							<p>$1</p>
+						</div>
+					)
+
+					$1.propTypes = {
+
+					}
+
+					export default $1
+        """

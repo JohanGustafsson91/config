@@ -1,0 +1,39 @@
+"*":
+  "atom-material-ui":
+    colors:
+      abaseColor:
+        red: 8
+        green: 218
+        blue: 115
+        alpha: 1
+      paintCursor: true
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    disabledPackages: [
+      "linter-jshint"
+      "linter-csslint"
+    ]
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    fontSize: 13
+    showIndentGuide: true
+    showInvisibles: true
+    softTabs: false
+    tabType: "hard"
+  "exception-reporting":
+    userId: "12ff08d5-0ec0-d8ee-4e52-4eeafa181c05"
+  "linter-sass-lint":
+    noConfigDisable: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
