@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!Atom/*
+!i3/*
+!scripts/*
+
+# ...even if they are in subdirectories
+!*/
