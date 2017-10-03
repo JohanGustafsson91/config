@@ -18,20 +18,20 @@ sudo apt-get upgrade
 
 # Install dependencies TODO answer yes on everything
 # sudo apt-get install git
-sudo apt-get install i3
-sudo apt-get install lxappearance
-sudo apt-get install xtrlock
-sudo apt-get install feh
-sudo apt-get install i3blocks
-sudo apt-get install thunar
-sudo apt-get install fontconfig-infinality
-sudo apt-get install arandr
-sudo apt-get install xrandr
-sudo apt-get install rofi
-sudo apt-get install vim
-sudo apt-get install tree
-sudo apt-get install xclip
-sudo apt-get install nodejs
+sudo apt-get install i3 -y
+sudo apt-get install lxappearance -y
+sudo apt-get install xtrlock -y
+sudo apt-get install feh -y
+sudo apt-get install i3blocks -y
+sudo apt-get install thunar -y
+sudo apt-get install fontconfig-infinality -y
+sudo apt-get install arandr -y
+sudo apt-get install xrandr -y
+sudo apt-get install rofi -y
+sudo apt-get install vim -y
+sudo apt-get install tree -y
+sudo apt-get install xclip -y
+sudo apt-get install nodejs -y
 
 # Install arc-theme
 # sudo apt-get install arc-theme
