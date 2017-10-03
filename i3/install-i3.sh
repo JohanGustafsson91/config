@@ -14,7 +14,7 @@ SLACK_VERSION=2.8.1
 
 # Update system
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 # Install dependencies TODO answer yes on everything
 # sudo apt-get install git
@@ -46,17 +46,17 @@ sudo apt-get install nodejs -y
 #sudo make install
 
 # Create temp installation folder
-mkdir ~/${TEMP_FOLDER} && cd ~/${TEMP_FOLDER}
+sudo -u $USER mkdir ~/${TEMP_FOLDER} && cd ~/${TEMP_FOLDER}
 
 # Get San Francisco font
 wget -O ~/${TEMP_FOLDER}/yosemitefont.zip https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip
 unzip ~/${TEMP_FOLDER}/yosemitefont.zip
-mkdir -p ~/.fonts && mv ~/${TEMP_FOLDER}/YosemiteSanFranciscoFont-master/*.ttf ~/.fonts
+sudo -u $USER mkdir -p ~/.fonts && mv ~/${TEMP_FOLDER}/YosemiteSanFranciscoFont-master/*.ttf ~/.fonts
 
 # Get Font Awesome font
 wget -O ~/${TEMP_FOLDER}/fontawesome.zip https://github.com/FortAwesome/Font-Awesome/archive/${FONT_AWESOME_VERSION}.zip
 unzip ~/${TEMP_FOLDER}/fontawesome.zip
-mkdir -p ~/.fonts && mv ~/${TEMP_FOLDER}/Font-Awesome-4.7.0/fonts/*.ttf ~/.fonts
+sudo -u $USER mkdir -p ~/.fonts && mv ~/${TEMP_FOLDER}/Font-Awesome-4.7.0/fonts/*.ttf ~/.fonts
 
 # Get chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7
@@ -81,13 +81,13 @@ sudo dpkg -i ~/${TEMP_FOLDER}/slack.deb
 
 # Move config scripts
 
-mkdir -p ~/.config/${SCRIPTS_FOLDER}
+sudo -u $USER mkdir -p ~/.config/${SCRIPTS_FOLDER}
 
 # Get screen brightness script
 wget -O ~/${TEMP_FOLDER}/screen-brightness.js https://raw.githubusercontent.com/JohanGustafsson91/screen-brightness/master/src/index.js
 mv ~/${TEMP_FOLDER}/screen-brightness.js ~/.config/${SCRIPTS_FOLDER}
 
-mkdir -p ~/.config/i3
+sudo -u $USER mkdir -p ~/.config/i3
 
 # Get i3 config
 wget -O ~/${TEMP_FOLDER}/config-i3 https://raw.githubusercontent.com/JohanGustafsson91/config/master/i3/config
