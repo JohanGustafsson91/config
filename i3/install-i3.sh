@@ -33,17 +33,17 @@ sudo apt-get install tree -y
 sudo apt-get install xclip -y
 sudo apt-get install nodejs -y
 
-# Install arc-theme
+# TODO Install arc-theme
 # sudo apt-get install arc-theme
-git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
-./autogen.sh --prefix=/usr
-sudo make install
+#git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+#./autogen.sh --prefix=/usr
+#sudo make install
 
-# Install arc icons
+# TODO Install arc icons
 # sudo apt-get install arc-icons
-git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme
-./autogen.sh --prefix=/usr
-sudo make install
+#git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme
+#./autogen.sh --prefix=/usr
+#sudo make install
 
 # Create temp installation folder
 mkdir ~/${TEMP_FOLDER} && cd ~/${TEMP_FOLDER}
@@ -73,7 +73,7 @@ sudo apt-get install spotify-client
 wget -O ~/${TEMP_FOLDER}/atom.deb https://atom.io/download/deb
 sudo dpkg -i ~/${TEMP_FOLDER}/atom.deb
 
-# Install Atom packages
+# TODO Install Atom packages
 
 # Install slack
 wget -O ~/${TEMP_FOLDER}/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
@@ -97,10 +97,6 @@ mv ~/${TEMP_FOLDER}/config-i3 ~/.config/i3/config
 wget -O ~/${TEMP_FOLDER}/i3blocks.conf https://raw.githubusercontent.com/JohanGustafsson91/config/master/i3/i3blocks.conf
 mv ~/${TEMP_FOLDER}/i3blocks.conf ~/.config/i3/i3blocks.conf
 
-# Get disable touchpad script
-# TODO
+# TODO Get disable touchpad script
 
 # google-chrome http://fontawesome.io/cheatsheet/ &
-# https://www.google.se/chrome/browser/desktop/index.html
-# https://github.com/acrisci/playerctl/releases
-# https://github.com/FortAwesome/Font-Awesome/releases
