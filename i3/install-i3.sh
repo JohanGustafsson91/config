@@ -74,13 +74,21 @@ wget -O ~/${TEMP_FOLDER}/atom.deb https://atom.io/download/deb
 sudo dpkg -i ~/${TEMP_FOLDER}/atom.deb
 
 # TODO Install Atom packages
+apm install ask-stack
 apm install atom-material-syntax
 apm install atom-material-ui
+apm install atom-ternjs
+apm install autocomplete-paths
 apm install busy-signal
 apm install color-picker
 apm install cucumber
 apm install docblockr
+apm install emmet
 apm install es6-javascript
+apm install expose
+apm install file-icons
+apm install git-blame
+apm install git-time-machine
 apm install goto-definition
 apm install hyperclick
 apm install intentions
@@ -89,6 +97,8 @@ apm install language-javascript-jsx
 apm install linter
 apm install linter-eslint
 apm install linter-ui-default
+apm install pane-layout-plus
+apm install pigments
 apm install prettier-atom
 apm install react-es6-snippets
 apm install split-diff
