@@ -74,6 +74,25 @@ wget -O ~/${TEMP_FOLDER}/atom.deb https://atom.io/download/deb
 sudo dpkg -i ~/${TEMP_FOLDER}/atom.deb
 
 # TODO Install Atom packages
+apm install atom-material-syntax
+apm install atom-material-ui
+apm install busy-signal
+apm install color-picker
+apm install cucumber
+apm install docblockr
+apm install es6-javascript
+apm install goto-definition
+apm install hyperclick
+apm install intentions
+apm install language-cucumber
+apm install language-javascript-jsx
+apm install linter
+apm install linter-eslint
+apm install linter-ui-default
+apm install prettier-atom
+apm install react-es6-snippets
+apm install split-diff
+apm install webbox-color
 
 # Install slack
 wget -O ~/${TEMP_FOLDER}/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
