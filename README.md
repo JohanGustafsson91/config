@@ -34,6 +34,7 @@ __Useful GIT commands__
 - Git status: Type `GStatus`
   - Then you can hit `enter` on selected file to open it
 - Splitted diff: Type `GDiff`
+- Open a .md file and type `MarkdownPreview` in normal mode to preview it 
 
 __Eslint__
 - Linting errors will be visible in editor based on eslint/prettier
