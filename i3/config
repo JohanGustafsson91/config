@@ -75,10 +75,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Chrome "
-set $workspace2 "2: Atom "
-set $workspace9 "9: Slack "
-set $workspace10 "10: Spotify "
+set $workspace1 "1: Chrome"
+set $workspace2 "2: Code "
+set $workspace9 "9: Slack"
+set $workspace10 "10: Spotify"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -113,7 +113,8 @@ exec spotify
 
 # Programs on workspaces
 assign [class="Google-chrome"] $workspace1
-assign [class="Atom"] $workspace2
+assign [class="Gvim"] $workspace2
+# assign [class="Atom"] $workspace2
 assign [class="Slack"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
@@ -215,12 +216,12 @@ exec compton -f12
 exec_always xset r rate 200 50
 
 # Screens
-# exec sh ~/.config/scripts/single-screen.sh
-# exec node ~/Projects/disable-touchpad-while-writing/src/index.js
+exec sh ~/.config/scripts/single-screen.sh
+exec node ~/Projects/disable-touchpad-while-writing/src/index.js
 exec xtrlock
 
 # Wallpapers
 # exec_always feh --bg-scale ~/Pictures/new-york.jpg
-# exec_always feh --bg-scale ~/Pictures/bg.png
+exec_always feh --bg-scale ~/Pictures/bg.png
 
 # https://www.youtube.com/watch?v=8-S0cWnLBKg&list=PL5ze0DjYv5DbCv9vNEzFmP6sU7ZmkGzcf
