@@ -6,7 +6,8 @@ Setup for modern Javascript development
 ### Installation
 1. Open vim
 2. Run `PluginInstall`
-3. Build nerdtree
+3. Build YouCompleteMe plugin
+  - `cd ~/.vim/bundle/YouCompleteMe/ && python install.py`
 
 ### Shortcuts and tips
 
