@@ -3,12 +3,12 @@
 ## Vim / Gvim
 Setup for modern Javascript development
 
-#### Installation
+### Installation
 1. Open vim
 2. Run `PluginInstall`
 3. Build nerdtree
 
-#### Shortcuts and tips
+### Shortcuts and tips
 
 __Project tree__
 - Hit `ctrl+t` to toggle project tree view
