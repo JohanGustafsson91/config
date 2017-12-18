@@ -55,4 +55,5 @@ __Eslint__
 - [] Add GoTo plugin (will look into ctags)
 - [] Check for even better javascript syntax.
 - [] Explore FP tools.
+- [] Fix beautiful Nerdtree with icons ([Guide here](https://github.com/ryanoasis/vim-devicons))
 - [] Add your own React/Recompose snippets for faster development.
