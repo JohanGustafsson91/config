@@ -41,3 +41,10 @@ __Eslint__
 - Linting errors will be visible in editor based on eslint/prettier
 - Linting errors will be fixed on save
 - `ctrl+alt+f` to fix linting errors in normal mode
+
+### TODOs
+- Add search in all files plugin.
+- Add GoTo plugin.
+- Check for even better javascript syntax.
+- Explore FP tools.
+- Add your own React/Recompose snippets for faster development.
