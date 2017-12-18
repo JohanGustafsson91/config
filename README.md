@@ -1,5 +1,8 @@
 # Config for Linux
 
+## i3
+Description coming soon...
+
 ## Vim / Gvim
 Setup for modern Javascript development
 
