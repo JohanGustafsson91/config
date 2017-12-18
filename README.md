@@ -41,6 +41,12 @@ __GOTO imported/required definition__
 - Set cursor on path
 - Hit `ctrl+w+f` to open file in vertical tab
 
+__Sorround words__
+- Add: Hello w|orld -> `yss"` => "Hello world"
+- Change: "Hello w|orld" -> `cs"'` => 'Hello world'
+- Delete: "Hello w|orld" -> `ds"` => Hello world
+- [More examples here](http://www.catonmat.net/blog/vim-plugins-surround-vim/)
+
 __Select (multiple) words__
 - Put cursor on word
 - Hit `ctrl+d` to select next word and `ctrl+k` to jump over word

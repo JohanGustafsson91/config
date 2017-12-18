@@ -66,6 +66,9 @@ Plugin 'iamcco/markdown-preview.vim'
 " ========== STATUS LINE AT BOTTOM
 Plugin 'bling/vim-airline'
 
+" ========== SMART SURROUND WORDS
+Plugin 'vim-scripts/surround.vim'
+
 " ========== CODE SYNTAX
 Plugin 'leshill/vim-json'
 Plugin 'mhartington/oceanic-next'
