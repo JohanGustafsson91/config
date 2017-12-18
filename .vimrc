@@ -63,10 +63,10 @@ Plugin 'iamcco/markdown-preview.vim'
 " ========== CODE SYNTAX
 Plugin 'leshill/vim-json'
 Plugin 'mhartington/oceanic-next'
-Plugin 'morhetz/gruvbox'
-Plugin 'endel/vim-github-colorscheme'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'othree/yajs.vim', { 'for': 'javascript' }
+Plugin 'othree/es.next.syntax.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
@@ -122,7 +122,7 @@ let g:jsx_ext_required = 0
 let g:ale_fixers = {
   \ 'javascript': ['eslint']
   \ }
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
@@ -164,6 +164,7 @@ autocmd User Node
 
 " ========== PROJECT TREE
 "autocmd vimenter * NERDTree
+let g:NERDTreeWinSize=60
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '[a-zA-Z]*cache[a-zA-Z]*']
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
@@ -173,5 +174,8 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+" SEARCH/ GREP
+:set ignorecase
 
 set secure
