@@ -44,6 +44,9 @@ Plugin 'terryma/vim-multiple-cursors'
 " ========== AUTO CLOSE XML/HTML TAGS
 Plugin 'alvan/vim-closetag'
 
+" ========== GOTO DEFINITION
+Plugin 'moll/vim-node'
+
 " ========== SNIPPETS
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -51,6 +54,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'epilande/vim-es2015-snippets'
 Plugin 'epilande/vim-react-snippets'
 Plugin 'honza/vim-snippets'
+Plugin 'groenewege/vim-less'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " ========== MARKDOWN
 Plugin 'iamcco/markdown-preview.vim'
@@ -144,8 +149,18 @@ let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" ========== PReview
+" ========== PREVIEW
 let vim_markdown_preview_github=1
+
+" ========== JS LIBS
+let g:used_javascript_libs = 'underscore,react,ramda,d3,chai,jasmine,requirejs,angularjs'
+
+" ========== GOTO DEFINITION
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
 
 " ========== PROJECT TREE
 "autocmd vimenter * NERDTree

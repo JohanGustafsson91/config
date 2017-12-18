@@ -7,8 +7,7 @@ Setup for modern Javascript development
 1. Install [Vundle](<https://github.com/VundleVim/Vundle.vim)
 2. Open vim
 3. Run `PluginInstall`
-4. Build YouCompleteMe plugin
-  - `cd ~/.vim/bundle/YouCompleteMe/ && python install.py`
+4. Build [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) plugin
 
 ### Shortcuts and tips
 
@@ -30,6 +29,10 @@ __Move lines__
 - Select lines with `v` in normal mode
 - Press `alt+k`/`alt+j` to move selected lines up/down 
 
+__GOTO imported/required definition__
+- Set cursor on path
+- Hit `ctrl+w+f` to open file in vertical tab
+
 __Select (multiple) words__
 - Put cursor on word
 - Hit `ctrl+d` to select next word and `ctrl+k` to jump over word
@@ -48,8 +51,8 @@ __Eslint__
 - `ctrl+alt+f` to fix linting errors in normal mode
 
 ### TODOs
-- Add search in all files plugin.
-- Add GoTo plugin.
-- Check for even better javascript syntax.
-- Explore FP tools.
-- Add your own React/Recompose snippets for faster development.
+- [x] Add search in all files plugin (just grep)
+- [] Add GoTo plugin (will look into ctags)
+- [] Check for even better javascript syntax.
+- [] Explore FP tools.
+- [] Add your own React/Recompose snippets for faster development.
