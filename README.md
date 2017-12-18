@@ -4,9 +4,10 @@
 Setup for modern Javascript development
 
 ### Installation
-1. Open vim
-2. Run `PluginInstall`
-3. Build YouCompleteMe plugin
+1. Install [Vundle](<https://github.com/VundleVim/Vundle.vim)
+2. Open vim
+3. Run `PluginInstall`
+4. Build YouCompleteMe plugin
   - `cd ~/.vim/bundle/YouCompleteMe/ && python install.py`
 
 ### Shortcuts and tips
