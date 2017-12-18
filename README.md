@@ -17,10 +17,14 @@ __Project tree__
 - Hit `enter` to open selected file in current view
 - Hit `s` to open selected file in splitted view
 
-__Search files__
+__Browse files__
 - Hit `ctrl+p` to search for files
 - Hit `enter` to open file in current view
 - Hit `ctrl+v` to open file in new splitted view
+
+__Search files__
+- `grep 'pattern' <files>`
+- `cw` to list results
 
 __Move lines__
 - Select lines with `v` in normal mode
