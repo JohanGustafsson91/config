@@ -47,6 +47,9 @@ Plugin 'alvan/vim-closetag'
 " ========== GOTO DEFINITION
 Plugin 'moll/vim-node'
 
+" ========== SEARCH FILES
+Plugin 'mileszs/ack.vim'
+
 " ========== SNIPPETS
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -59,6 +62,9 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 
 " ========== MARKDOWN
 Plugin 'iamcco/markdown-preview.vim'
+
+" ========== STATUS LINE AT BOTTOM
+Plugin 'bling/vim-airline'
 
 " ========== CODE SYNTAX
 Plugin 'leshill/vim-json'
@@ -170,6 +176,7 @@ let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 map <C-t> :NERDTreeToggle<CR>
+nmap <C-A-r> :NERDTreeFind<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>

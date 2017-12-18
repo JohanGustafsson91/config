@@ -4,7 +4,7 @@
 Setup for modern Javascript development
 
 ### Installation
-1. Install [Vundle](<https://github.com/VundleVim/Vundle.vim)
+1. Install [Vundle](https://github.com/VundleVim/Vundle.vim)
 2. Open vim
 3. Run `PluginInstall`
 4. Build [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) plugin
@@ -20,9 +20,17 @@ __Browse files__
 - Hit `ctrl+p` to search for files
 - Hit `enter` to open file in current view
 - Hit `ctrl+v` to open file in new splitted view
+- Hit `ctrl+alt+r` to reveal current file in project tree
 
 __Search files__
-- `grep 'pattern' <files>`
+
+With ack:
+- Install `ack-grep`
+- `:Ack [options] {pattern} [{directories}]`
+
+With vimgrep:
+- Search from wanted directory in project tree by navigating to it and hit `cd`
+- `vimgrep 'pattern' */**`
 - `cw` to list results
 
 __Move lines__
@@ -53,7 +61,7 @@ __Eslint__
 ### TODOs
 - [x] Add search in all files plugin (just grep)
 - [] Add GoTo plugin (will look into ctags)
-- [] Check for even better javascript syntax.
+- [x] Check for even better javascript syntax.
 - [] Explore FP tools.
 - [] Fix beautiful Nerdtree with icons ([Guide here](https://github.com/ryanoasis/vim-devicons))
 - [] Add your own React/Recompose snippets for faster development.
