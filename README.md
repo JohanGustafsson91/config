@@ -19,6 +19,13 @@ __Project tree__
 - Hit `enter` to open selected file in current view
 - Hit `s` to open selected file in splitted view
 
+__Window / panes__
+- Full width: `ctrl+w+|`
+- Equal width: `ctrl+w+=`
+- Full height: `ctrl+w+_`
+- Resize: `ctrl+w -` or `ctrl+w +`.
+  - You can also do `ctrl+w 50 -` or `ctrl+w 50 +` to resize with size
+
 __Browse files__
 - Hit `ctrl+p` to search for files
 - Hit `enter` to open file in current view
