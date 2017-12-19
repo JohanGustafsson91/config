@@ -69,13 +69,16 @@ Plugin 'bling/vim-airline'
 " ========== SMART SURROUND WORDS
 Plugin 'vim-scripts/surround.vim'
 
+Plugin 'mhinz/vim-startify'
+
 " ========== CODE SYNTAX
 Plugin 'leshill/vim-json'
 Plugin 'mhartington/oceanic-next'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'othree/yajs.vim', { 'for': 'javascript' }
 Plugin 'othree/es.next.syntax.vim'
+Plugin 'vim-scripts/Enhanced-Javascript-syntax'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
@@ -188,5 +191,4 @@ nmap <silent> <A-Right> :wincmd l<CR>
 " SEARCH/ GREP
 :set ignorecase
 nmap <silent> <C-A-d> :set hlsearch!<CR>
-
 set secure
