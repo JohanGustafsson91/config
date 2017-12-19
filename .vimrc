@@ -187,5 +187,6 @@ nmap <silent> <A-Right> :wincmd l<CR>
 
 " SEARCH/ GREP
 :set ignorecase
+nmap <silent> <C-A-d> :set hlsearch!<CR>
 
 set secure

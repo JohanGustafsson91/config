@@ -36,6 +36,15 @@ With vimgrep:
 - `vimgrep 'pattern' */**`
 - `cw` to list results
 
+__Hightlight words__
+- Run `ctrl+alt+d` to toggle highlight mode
+- When cursor on word, press `*` to highlight it.
+- Press `*` again to go to next and `#` to go to previous
+
+__Get occurence of word in window__
+- Hit `[I` on word to get it in window
+- Go to line with `:<row-number>`
+
 __Move lines__
 - Select lines with `v` in normal mode
 - Press `alt+k`/`alt+j` to move selected lines up/down 
