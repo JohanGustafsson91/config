@@ -19,6 +19,43 @@ Setup for modern Javascript development
 3. Run `PluginInstall`
 4. Build [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) plugin
 
+### Plugins
+
+- Description (todo) - [VundleVim/Vundle.vim]()
+- Description (todo) - [vim-scripts/L9]()
+- Description (todo) - [gosukiwi/vim-atom-dark']()
+- Description (todo) - [mhartington/oceanic-next]()
+- Description (todo) - [scrooloose/nerdtree]()
+- Description (todo) - [ctrlpvim/ctrlp.vim]()
+- Description (todo) - [mileszs/ack.vim]()
+- Description (todo) - [terryma/vim-multiple-cursors]()
+- Description (todo) - [tpope/vim-fugitive]()
+- Description (todo) - [airblade/vim-gitgutter]()
+- Description (todo) - [iamcco/markdown-preview.vim]()
+- Description (todo) - [Yggdroot/indentLine]()
+- Description (todo) - [bling/vim-airline]()
+- Description (todo) - [w0rp/ale]()
+- Description (todo) - [matze/vim-move]()
+- Description (todo) - [jiangmiao/auto-pairs]()
+- Description (todo) - [alvan/vim-closetag]()
+- Description (todo) - [vim-scripts/surround.vim]()
+- Description (todo) - [Valloric/YouCompleteMe]()
+- Description (todo) - [ervandew/supertab]()
+- Description (todo) - [SirVer/ultisnips]()
+- Description (todo) - [epilande/vim-es2015-snippets]()
+- Description (todo) - [epilande/vim-react-snippets]()
+- Description (todo) - [honza/vim-snippets]()
+- Description (todo) - [groenewege/vim-less]()
+- Description (todo) - [othree/javascript-libraries-syntax.vim]()
+- Description (todo) - [pangloss/vim-javascript]()
+- Description (todo) - [maxmellon/vim-jsx-pretty]()
+- Description (todo) - [othree/yajs.vim', { 'for': 'javascript' ]()
+- Description (todo) - [othree/es.next.syntax.vim]()
+- Description (todo) - [vim-scripts/Enhanced-Javascript-syntax]()
+- Description (todo) - [moll/vim-node]()
+- Description (todo) - [mhinz/vim-startify]()
+- Description (todo) - [editorconfig/editorconfig-vim]()
+
 ### Shortcuts and tips
 
 __Project tree__
