@@ -277,4 +277,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+# If transparency is not working
+# https://faq.i3wm.org/question/3162/terminal-transparency-in-i3.1.html
+exec_always xcompmgr -c -f -n
+
 #smart_gaps on
