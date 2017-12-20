@@ -27,6 +27,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "Search in files
 Plugin 'mileszs/ack.vim'
 
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
 " GIT integration
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -214,6 +217,14 @@ autocmd User Node
 " JS editor syntax
 let g:jsx_ext_required = 0
 
+
+" ============================================================================
+" Multiple cursor
+
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-k>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 " ****************************************************************************
 " End of Plugin config
