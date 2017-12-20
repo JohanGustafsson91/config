@@ -21,40 +21,78 @@ Setup for modern Javascript development
 
 ### Plugins
 
-- Description (todo) - [VundleVim/Vundle.vim]()
-- Description (todo) - [vim-scripts/L9]()
-- Description (todo) - [gosukiwi/vim-atom-dark']()
-- Description (todo) - [mhartington/oceanic-next]()
-- Description (todo) - [scrooloose/nerdtree]()
-- Description (todo) - [ctrlpvim/ctrlp.vim]()
-- Description (todo) - [mileszs/ack.vim]()
-- Description (todo) - [terryma/vim-multiple-cursors]()
-- Description (todo) - [tpope/vim-fugitive]()
-- Description (todo) - [airblade/vim-gitgutter]()
-- Description (todo) - [iamcco/markdown-preview.vim]()
-- Description (todo) - [Yggdroot/indentLine]()
-- Description (todo) - [bling/vim-airline]()
-- Description (todo) - [w0rp/ale]()
-- Description (todo) - [matze/vim-move]()
-- Description (todo) - [jiangmiao/auto-pairs]()
-- Description (todo) - [alvan/vim-closetag]()
-- Description (todo) - [vim-scripts/surround.vim]()
-- Description (todo) - [Valloric/YouCompleteMe]()
-- Description (todo) - [ervandew/supertab]()
-- Description (todo) - [SirVer/ultisnips]()
-- Description (todo) - [epilande/vim-es2015-snippets]()
-- Description (todo) - [epilande/vim-react-snippets]()
-- Description (todo) - [honza/vim-snippets]()
-- Description (todo) - [groenewege/vim-less]()
-- Description (todo) - [othree/javascript-libraries-syntax.vim]()
-- Description (todo) - [pangloss/vim-javascript]()
-- Description (todo) - [maxmellon/vim-jsx-pretty]()
-- Description (todo) - [othree/yajs.vim', { 'for': 'javascript' ]()
-- Description (todo) - [othree/es.next.syntax.vim]()
-- Description (todo) - [vim-scripts/Enhanced-Javascript-syntax]()
-- Description (todo) - [moll/vim-node]()
-- Description (todo) - [mhinz/vim-startify]()
-- Description (todo) - [editorconfig/editorconfig-vim]()
+__Package manager__
+- [VundleVim/Vundle.vim]()
+- [vim-scripts/L9]()
+
+__Themes__
+- [gosukiwi/vim-atom-dark]()
+- [mhartington/oceanic-next]()
+
+__Project tree__
+- [scrooloose/nerdtree]()
+
+__Browse files__
+- [ctrlpvim/ctrlp.vim]()
+
+__Search in files__
+- [mileszs/ack.vim]()
+
+__Multiple cursors__
+- [terryma/vim-multiple-cursors]()
+
+__GIT integration__
+- [tpope/vim-fugitive]()
+- [airblade/vim-gitgutter]()
+- [iamcco/markdown-preview.vim]()
+
+__Indentation character__
+- [Yggdroot/indentLine]()
+
+__Status bar on bottom__
+- [bling/vim-airline]()
+
+__Es lint__
+- [w0rp/ale]()
+
+__Move lines__
+- [matze/vim-move]()
+
+__Complete html, functions, strings...__
+- [jiangmiao/auto-pairs]()
+- [alvan/vim-closetag]()
+- [vim-scripts/surround.vim]()
+
+__Auto complete__
+- [Valloric/YouCompleteMe]()
+- [ervandew/supertab]()
+- [SirVer/ultisnips]()
+
+__Snippets__
+- [epilande/vim-es2015-snippets]()
+- [epilande/vim-react-snippets]()
+- [honza/vim-snippets]()
+- [groenewege/vim-less]()
+
+__JS libs__
+- [othree/javascript-libraries-syntax.vim]()
+
+__JS editor syntax__
+- [pangloss/vim-javascript]()
+- [maxmellon/vim-jsx-pretty]()
+- [othree/yajs.vim]()
+- [othree/es.next.syntax.vim]()
+- [vim-scripts/Enhanced-Javascript-syntax]()
+
+__Jump to required/imported file__
+- [moll/vim-node]()
+
+__Start screen__
+- [mhinz/vim-startify]()
+
+__Editor config__
+- [editorconfig/editorconfig-vim]()
+
 
 ### Shortcuts and tips
 
