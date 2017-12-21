@@ -34,6 +34,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Indentation character
 Plugin 'Yggdroot/indentLine'
@@ -152,6 +153,18 @@ let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows = 0
 nmap <C-t> :NERDTreeToggle<CR>
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " ============================================================================
 " Browse files

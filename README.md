@@ -45,6 +45,7 @@ __GIT integration__
 - [tpope/vim-fugitive]()
 - [airblade/vim-gitgutter]()
 - [iamcco/markdown-preview.vim]()
+- [Xuyuanp/nerdtree-git-plugin]()
 
 __Indentation character__
 - [Yggdroot/indentLine]()
@@ -167,7 +168,7 @@ __Eslint__
 
 ### TODOs
 - [] Snippets for grepping
-- [] GIT diff in nerdtree
+- [x] GIT diff in nerdtree
 - [] Smarter indentation (while moving lines etc)
 - [] Add GoTo plugin (will look into ctags)
 - [] Explore FP tools.
