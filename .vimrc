@@ -102,7 +102,6 @@ filetype on
 " Theme / editor 
 
 syntax enable
-set background=dark
 colorscheme atom-dark
 
 set ruler " Enable thins below
@@ -123,6 +122,7 @@ set spelllang=en_bg " English spelling
 set nostartofline " Prevent cursor from changing the current column
 set linebreak " Line break
 let &colorcolumn="80" " Show column break
+set encoding=utf8 " Encoding
 augroup filetype javascript syntax=javascript " JS syntax
 set guioptions-=m " Remove menu bar
 set guioptions-=T " Remove toolbar
