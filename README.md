@@ -166,9 +166,10 @@ __Eslint__
 - `ctrl+alt+f` to fix linting errors in normal mode
 
 ### TODOs
-- [x] Add search in all files plugin (just grep)
+- [] Snippets for grepping
+- [] GIT diff in nerdtree
+- [] Smarter indentation (while moving lines etc)
 - [] Add GoTo plugin (will look into ctags)
-- [x] Check for even better javascript syntax.
 - [] Explore FP tools.
 - [] Fix beautiful Nerdtree with icons ([Guide here](https://github.com/ryanoasis/vim-devicons))
 - [] Add your own React/Recompose snippets for faster development.
