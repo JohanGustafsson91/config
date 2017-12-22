@@ -36,8 +36,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" Indentation character
+" Indentation
 Plugin 'Yggdroot/indentLine'
+Plugin 'gavocanov/vim-js-indent'
 
 " Status bar on bottom
 Plugin 'bling/vim-airline'
@@ -131,6 +132,7 @@ set guioptions-=L " Remove left-hand scroll bar
 set lines=999 columns=999
 set fillchars+=vert:\$
 
+
 " Navigate in windows
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -140,8 +142,11 @@ nmap <silent> <A-Right> :wincmd l<CR>
 set ignorecase " Ignore case sensitive
 nmap <silent> <C-A-d> :set hlsearch!<CR> " Hightlight words
 
+" Indentation
 let g:indentLine_char = '│'
+inoremap {<CR> {<CR>}<C-o>O
 
+vnoremap // y/<C-R>"<CR> " Search hightlighted word
 
 " ============================================================================
 " Project tree
@@ -152,6 +157,7 @@ let NERDTreeShowHidden = 1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows = 0
 nmap <C-t> :NERDTreeToggle<CR>
+nmap <C-A-r> :NERDTreeFind<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
