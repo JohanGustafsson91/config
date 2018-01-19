@@ -17,6 +17,7 @@ Plugin 'vim-scripts/L9'
 " Themes
 Plugin 'gosukiwi/vim-atom-dark' 
 Plugin 'mhartington/oceanic-next'
+Plugin 'crusoexia/vim-monokai'
 
 " Project tree
 Plugin 'scrooloose/nerdtree'
@@ -103,7 +104,8 @@ filetype on
 " Theme / editor 
 
 syntax enable
-colorscheme atom-dark
+"colorscheme atom-dark
+colorscheme monokai
 
 set ruler " Enable thins below
 set hidden " Hide no write since changed messages
@@ -190,11 +192,21 @@ let vim_markdown_ipreview_github=1
 " ============================================================================
 " Es lint
 
-let g:ale_fixers = { 'javascript': ['eslint'] }
+"let g:ale_fixers = { 'javascript': ['eslint'] }
+"let g:ale_linters = {
+"\   'javascript': ['eslint'],
+"\ }
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'prettier'],
+\   'html': ['prettier'],
+\   'less': ['prettier'],
+\   'json': ['prettier'],
+\ }
 let g:ale_fix_on_save = 0
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_javascript_prettier_use_local_config = 1
 nmap <C-A-f> <Plug>(ale_fix) " Shortcut for lint fix
 
 
@@ -244,6 +256,10 @@ let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+"set foldlevel=1000
+au BufRead * normal zR
+
 
 " ****************************************************************************
 " End of Plugin config
