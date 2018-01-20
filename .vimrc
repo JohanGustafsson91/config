@@ -28,6 +28,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "Search in files
 Plugin 'mileszs/ack.vim'
 
+" Search selection
+Plugin 'JohanGustafsson91/format-ack-search-from-selection'
+
+" List functions
+Plugin 'JohanGustafsson91/vim-list-javascript-functions'
+
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -150,6 +156,7 @@ inoremap {<CR> {<CR>}<C-o>O
 
 vnoremap // y/<C-R>"<CR> " Search hightlighted word
 
+
 " ============================================================================
 " Project tree
 
@@ -174,12 +181,17 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+
 " ============================================================================
 " Browse files
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage|build|dist'
 let g:ctrlp_match_window = 'results:100'
 
+
+" ============================================================================
+" Search selection
+let g:format_ack_search_from_selection_ignore_dirs = ['node_modules', 'dist', 'build', 'coverage']
 
 " ============================================================================
 " GIT integration
