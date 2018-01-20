@@ -37,6 +37,10 @@ __Browse files__
 
 __Search in files__
 - [mileszs/ack.vim]()
+- [JohanGustafsson91/format-ack-search-from-selection]()
+
+__List javascript functions in current file__
+- [JohanGustafsson91/vim-list-javascript-functions]()
 
 __Multiple cursors__
 - [terryma/vim-multiple-cursors]()
@@ -117,6 +121,13 @@ __Browse files__
 
 __Search files__
 
+With format_ack_search_from_selection:
+- Select text
+- Press `AS`
+
+or
+- `call SearchAckWithFormattedQuery('My search query')`
+
 With ack:
 - Install `ack-grep`
 - `:Ack [options] {pattern} [{directories}]`
@@ -125,6 +136,9 @@ With vimgrep:
 - Search from wanted directory in project tree by navigating to it and hit `cd`
 - `vimgrep 'pattern' */**`
 - `cw` to list results
+
+__List javascript functions__
+- Press `<Ctrl+a>f`
 
 __Hightlight words__
 - Run `ctrl+alt+d` to toggle highlight mode
