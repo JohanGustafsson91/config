@@ -91,6 +91,9 @@ Plugin 'mhinz/vim-startify'
 " Editor config
 Plugin 'editorconfig/editorconfig-vim'
 
+" Dock blocker
+Plugin 'heavenshell/vim-jsdoc'
+
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
@@ -139,7 +142,9 @@ set guioptions-=r " Remove right-hand scroll bar
 set guioptions-=L " Remove left-hand scroll bar
 set lines=999 columns=999
 set fillchars+=vert:\$
-
+set foldlevel=1000
+" set fileformat=unix
+" autocmd BufReadPost * :setlocal ff=unix
 
 " Navigate in windows
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -191,7 +196,7 @@ let g:ctrlp_match_window = 'results:100'
 
 " ============================================================================
 " Search selection
-let g:format_ack_search_from_selection_ignore_dirs = ['node_modules', 'dist', 'build', 'coverage']
+let g:format_ack_search_from_selection_ignore_dirs = ['node_modules', 'dist', 'build', 'coverage', '.jestcache']
 
 " ============================================================================
 " GIT integration
@@ -204,21 +209,22 @@ let vim_markdown_ipreview_github=1
 " ============================================================================
 " Es lint
 
-"let g:ale_fixers = { 'javascript': ['eslint'] }
-"let g:ale_linters = {
-"\   'javascript': ['eslint'],
-"\ }
-let g:ale_fixers = {
-\   'javascript': ['eslint', 'prettier'],
-\   'html': ['prettier'],
-\   'less': ['prettier'],
-\   'json': ['prettier'],
-\ }
+let g:ale_fixers = { 'javascript': ['eslint'] }
+"let g:ale_linters = { 'javascript': ['eslint'] }
+
+" let g:ale_fixers = {
+" \   'javascript': ['eslint'],
+" \   'html': ['prettier'],
+" \   'less': ['prettier'],
+" \   'json': ['prettier'],
+" \ }
 let g:ale_fix_on_save = 0
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 let g:ale_javascript_prettier_use_local_config = 1
+nmap <silent> <C-s-f> :set fileformat=unix<CR>
+nmap <silent> <C-s-l> :set foldlevel=100<CR>
 nmap <C-A-f> <Plug>(ale_fix) " Shortcut for lint fix
 
 
@@ -239,6 +245,14 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 let g:used_javascript_libs = 'underscore,react,ramda,d3,chai,jasmine,requirejs,angularjs'
 
+
+" ============================================================================
+" DocBlockr
+command! -register JsDoc call jsdoc#insert()
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_enable_es6 = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_additional_descriptions = 1
 
 " ============================================================================
 " Complete html, functions, strings...
@@ -269,12 +283,9 @@ let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-"set foldlevel=1000
 au BufRead * normal zR
 
 
 " ****************************************************************************
 " End of Plugin config
 " ****************************************************************************
-
-set secure
