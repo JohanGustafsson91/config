@@ -2,8 +2,7 @@
 
 ###
 # Install and setup i3 config
-#
-# TODO: Scrape latest versions
+# TODO: Scrape latest versions 
 ###
 
 # Variables
@@ -16,7 +15,7 @@ SLACK_VERSION=2.8.1
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Install dependencies TODO answer yes on everything
+# Install dependencies
 # sudo apt-get install git
 sudo apt-get install i3 -y
 sudo apt-get install lxappearance -y
@@ -69,41 +68,6 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install spotify-client
 
-# Get atom
-wget -O ~/${TEMP_FOLDER}/atom.deb https://atom.io/download/deb
-sudo dpkg -i ~/${TEMP_FOLDER}/atom.deb
-
-# TODO Install Atom packages
-apm install ask-stack
-apm install atom-material-syntax
-apm install atom-material-ui
-apm install atom-ternjs
-apm install autocomplete-paths
-apm install busy-signal
-apm install color-picker
-apm install cucumber
-apm install docblockr
-apm install emmet
-apm install es6-javascript
-apm install expose
-apm install file-icons
-apm install git-blame
-apm install git-time-machine
-apm install goto-definition
-apm install hyperclick
-apm install intentions
-apm install language-cucumber
-apm install language-javascript-jsx
-apm install linter
-apm install linter-eslint
-apm install linter-ui-default
-apm install pane-layout-plus
-apm install pigments
-apm install prettier-atom
-apm install react-es6-snippets
-apm install split-diff
-apm install webbox-color
-
 # Install slack
 wget -O ~/${TEMP_FOLDER}/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
 sudo dpkg -i ~/${TEMP_FOLDER}/slack.deb
@@ -125,7 +89,3 @@ mv ~/${TEMP_FOLDER}/config-i3 ~/.config/i3/config
 # Get i3blocks config
 wget -O ~/${TEMP_FOLDER}/i3blocks.conf https://raw.githubusercontent.com/JohanGustafsson91/config/master/i3/i3blocks.conf
 mv ~/${TEMP_FOLDER}/i3blocks.conf ~/.config/i3/i3blocks.conf
-
-# TODO Get disable touchpad script
-
-# google-chrome http://fontawesome.io/cheatsheet/ &
