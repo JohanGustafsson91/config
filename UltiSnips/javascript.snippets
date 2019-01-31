@@ -1,0 +1,29 @@
+snippet cl "console.log(...)" b
+console.log($0);
+endsnippet
+
+snippet rfc "React Functional Component" b
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const $1 = (props) => {
+  return (
+    <div>$1</div>
+  )
+}
+
+$1.propTypes = {};
+
+export default $1;
+endsnippet
+
+snippet rr "Redux empty reducer" b
+const initialState = {};
+
+const handlers = {};
+
+export default (state = initialState, action) => {
+  const handler = handlers[action.type];
+  return handler ? handler(state, action) : state;
+};
+endsnippet

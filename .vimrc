@@ -1,7 +1,6 @@
 " ============================================================================
 " Plugins
 " ============================================================================
-
 if &compatible
   set nocompatible
 end
@@ -67,10 +66,10 @@ Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 
 " Snippets
-Plugin 'epilande/vim-es2015-snippets'
-Plugin 'epilande/vim-react-snippets'
-Plugin 'honza/vim-snippets'
-Plugin 'groenewege/vim-less'
+"Plugin 'epilande/vim-es2015-snippets'
+"Plugin 'epilande/vim-react-snippets'
+"Plugin 'honza/vim-snippets'
+"Plugin 'groenewege/vim-less'
 
 " JS libs
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -81,6 +80,7 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'othree/yajs.vim', { 'for': 'javascript' }
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'vim-scripts/Enhanced-Javascript-syntax'
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Jump to required/imported file
 Plugin 'moll/vim-node'
@@ -93,6 +93,9 @@ Plugin 'editorconfig/editorconfig-vim'
 
 " Dock blocker
 Plugin 'heavenshell/vim-jsdoc'
+
+" Undo history
+Plugin 'simnalamburt/vim-mundo.git'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
@@ -162,6 +165,9 @@ inoremap {<CR> {<CR>}<C-o>O
 vnoremap // y/<C-R>"<CR> " Search hightlighted word
 
 
+nmap <leader>sr :.,$s///gc<left><left><left><left>
+vmap a y<esc>:%s/<c-r>"//gc<left><left><left>
+
 " ============================================================================
 " Project tree
 
@@ -218,7 +224,14 @@ let g:ale_fixers = { 'javascript': ['eslint'] }
 " \   'less': ['prettier'],
 " \   'json': ['prettier'],
 " \ }
-let g:ale_fix_on_save = 0
+
+let g:prettier#exec_cmd_path = '/home/johan/.config/yarn/global/node_modules/prettier/bin-prettier.js'
+let g:prettier#config#bracket_spacing = 'true'
+" let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#autoformat = 1
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
@@ -226,7 +239,6 @@ let g:ale_javascript_prettier_use_local_config = 1
 nmap <silent> <C-s-f> :set fileformat=unix<CR>
 nmap <silent> <C-s-l> :set foldlevel=100<CR>
 nmap <C-A-f> <Plug>(ale_fix) " Shortcut for lint fix
-
 
 " ============================================================================
 " Auto complete
@@ -242,7 +254,6 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " ============================================================================
 " JS libs
-
 let g:used_javascript_libs = 'underscore,react,ramda,d3,chai,jasmine,requirejs,angularjs'
 
 
@@ -256,7 +267,6 @@ let g:jsdoc_additional_descriptions = 1
 
 " ============================================================================
 " Complete html, functions, strings...
-
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
 
 
@@ -274,14 +284,18 @@ autocmd User Node
 " JS editor syntax
 let g:jsx_ext_required = 0
 
+" ============================================================================
+" Snippets
+"let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+"let g:UltiSnipsSnippetDirectories=['~/.vim/UltiSnips/']  
 
 " ============================================================================
 " Multiple cursor
 
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-k>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+" let g:multi_cursor_next_key='<C-f>'
+" let g:multi_cursor_prev_key='<C-k>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
 
 au BufRead * normal zR
 
