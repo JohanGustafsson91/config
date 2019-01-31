@@ -17,7 +17,7 @@ sudo apt-get upgrade -y
 
 # Install dependencies
 # sudo apt-get install git
-sudo apt-get install i3 -y
+# sudo apt-get install i3 -y
 sudo apt-get install lxappearance -y
 sudo apt-get install xtrlock -y
 sudo apt-get install feh -y
@@ -63,10 +63,10 @@ wget -O ~/${TEMP_FOLDER}/chrome.deb https://dl.google.com/linux/direct/google-ch
 sudo dpkg -i ~/${TEMP_FOLDER}/chrome.deb
 
 # Get spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update
-sudo apt-get install spotify-client
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+#echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+#sudo apt-get update
+#sudo apt-get install spotify-client
 
 # Install slack
 wget -O ~/${TEMP_FOLDER}/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
@@ -77,8 +77,8 @@ sudo dpkg -i ~/${TEMP_FOLDER}/slack.deb
 sudo -u $USER mkdir -p ~/.config/${SCRIPTS_FOLDER}
 
 # Get screen brightness script
-wget -O ~/${TEMP_FOLDER}/screen-brightness.js https://raw.githubusercontent.com/JohanGustafsson91/screen-brightness/master/src/index.js
-mv ~/${TEMP_FOLDER}/screen-brightness.js ~/.config/${SCRIPTS_FOLDER}
+#wget -O ~/${TEMP_FOLDER}/screen-brightness.js https://raw.githubusercontent.com/JohanGustafsson91/screen-brightness/master/src/index.js
+#mv ~/${TEMP_FOLDER}/screen-brightness.js ~/.config/${SCRIPTS_FOLDER}
 
 sudo -u $USER mkdir -p ~/.config/i3
 
