@@ -1,179 +1,223 @@
-" ============================================================================
-" Plugins
-" ============================================================================
+" PLUGINS ----------------------------------------------------------------- {{{
+call plug#begin('~/.vim/plugged')
 
-if &compatible
-  set nocompatible
-end
-
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" Package manager
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/L9'
+" Project tree
+Plug 'scrooloose/nerdtree'  
 
 " Themes
-Plugin 'gosukiwi/vim-atom-dark' 
-Plugin 'mhartington/oceanic-next'
-Plugin 'crusoexia/vim-monokai'
+Plug 'crusoexia/vim-monokai'
+Plug 'haishanh/night-owl.vim'
+Plug 'endel/vim-github-colorscheme'
 
-" Project tree
-Plugin 'scrooloose/nerdtree'
+" Coding
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
-" Browse files
-Plugin 'ctrlpvim/ctrlp.vim'
-
-"Search in files
-Plugin 'mileszs/ack.vim'
-
-" Search selection
-Plugin 'JohanGustafsson91/format-ack-search-from-selection'
-
-" List functions
-Plugin 'JohanGustafsson91/vim-list-javascript-functions'
-
-" Multiple cursors
-Plugin 'terryma/vim-multiple-cursors'
-
-" GIT integration
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-" Indentation
-Plugin 'Yggdroot/indentLine'
-Plugin 'gavocanov/vim-js-indent'
-
-" Status bar on bottom
-Plugin 'bling/vim-airline'
-
-" Es lint
-Plugin 'w0rp/ale'
-
-" Move lines
-Plugin 'matze/vim-move'
+" FZF 
+Plug 'junegunn/fzf' , { 'do' : { -> fzf#install() } } 
+Plug 'junegunn/fzf.vim'
 
 " Complete html, functions, strings...
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'alvan/vim-closetag'
-Plugin 'vim-scripts/surround.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'vim-scripts/surround.vim'
 
-" Auto complete
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
+" GIT integration
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Snippets
-Plugin 'epilande/vim-es2015-snippets'
-Plugin 'epilande/vim-react-snippets'
-Plugin 'honza/vim-snippets'
-Plugin 'groenewege/vim-less'
+" Status bar on bottom
+Plug 'bling/vim-airline'
 
-" JS libs
-Plugin 'othree/javascript-libraries-syntax.vim'
+" Show hex colors
+Plug 'gko/vim-coloresque'
 
-" JS editor syntax
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'othree/yajs.vim', { 'for': 'javascript' }
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'vim-scripts/Enhanced-Javascript-syntax'
+" TS server
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
-" Jump to required/imported file
-Plugin 'moll/vim-node'
+call plug#end()
+" }}}
 
-" Start screen
-Plugin 'mhinz/vim-startify'
+" NATIVE SETTINGS --------------------------------------------------------- {{{
 
-" Editor config
-Plugin 'editorconfig/editorconfig-vim'
+" Enable code folding by section in this file
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 
-" Dock blocker
-Plugin 'heavenshell/vim-jsdoc'
+" Disable compability with VI to avoid unexpected issues.
+set nocompatible
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
-
-call vundle#end()
+" Enable file type detection
 filetype on
 
-" ============================================================================
-" End of Plugins
-" ============================================================================
+" Enable plugins and load them for the file type
+filetype plugin on
 
-" ****************************************************************************
-" Plugin config
-" ****************************************************************************
+" Load an indent file for the file type
+filetype indent on 
 
-" ============================================================================
-" Theme / editor 
+" Enable syntax highlighting
+syntax on
+
+" Display line numbers
+set number
+
+" Hightlight cursor line below cursor horizontally
+set cursorline
+
+" Show column break
+let &colorcolumn="80" 
+
+" Shift width 2 spaces
+set shiftwidth=2
+
+" Set tabstop to 2 columns
+set tabstop=2
+
+" Auto indent
+set smartindent
+
+" Use space char instead of tab
+set expandtab
+
+" Disable save backup files
+set nobackup
+set nowritebackup
+
+" Disable swap files
+set noswapfile
+
+" Open new horizontal window below
+set splitbelow 
+
+" Open new vertical window on right
+set splitright 
+
+" English spelling
+set spelllang=en_bg 
+
+" Prevent cursor from changing the current column
+set nostartofline 
+
+" Linebreak
+set linebreak
+
+" Encoding
+set encoding=utf8
+
+" Avoid scrolling below or above number of lines when scrolling
+set scrolloff=18
+
+" Disable wrap lines 
+set nowrap
+
+" Incrementally highlight matching characters as you type
+set incsearch
+
+" Ignore capital chars when searching
+set ignorecase
+" set smartcase <- Capital letters
+
+" Show partial command you type in the last line of the screen
+set showcmd
+
+" Show the mode in the last line
+set showmode
+
+" Show matching words during a search
+set showmatch
+
+" Highlight search result
+set hlsearch
+
+" Larger history
+set history=1000
+
+" Enable auto completion menu after pressing TAB
+set wildmenu
+
+" Make wildmenu similar to bash completion
+set wildmode=list:longest
+
+" Disable files that we don't want to edit with VIM
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Enable mouse
+set mouse=a
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Remove menu and scroll bar
+set guioptions-=m 
+set guioptions-=T 
+set guioptions-=r
+set guioptions-=L
+
+" Fix scroll lag
+set lines=999 columns=999
+
+" Folding
+set foldmethod=indent
+set foldlevel=0
+set foldnestmax=1
+
+" Theme
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 syntax enable
-"colorscheme atom-dark
-colorscheme monokai
+colorscheme night-owl
+" colorscheme github
+" colorscheme monokai
 
-set ruler " Enable thins below
-set hidden " Hide no write since changed messages
-set number " Row numbers
-set laststatus=2 " Always display status line
-set smartindent " Auto indent
-set ts=2 " 2 spaces tab
-set sw=2 " 2 spaces shift width
-set shiftwidth=2
-set tabstop=2
-set et " Expand tabs to spaces
-set cursorline " Hightlight line where cursor is
-set noswapfile " Dont make swap files
-set splitbelow " Open new horizontal window below
-set splitright " Open new vertical window on right
-set spelllang=en_bg " English spelling
-set nostartofline " Prevent cursor from changing the current column
-set linebreak " Line break
-let &colorcolumn="80" " Show column break
-set encoding=utf8 " Encoding
-augroup filetype javascript syntax=javascript " JS syntax
-set guioptions-=m " Remove menu bar
-set guioptions-=T " Remove toolbar
-set guioptions-=r " Remove right-hand scroll bar
-set guioptions-=L " Remove left-hand scroll bar
-set lines=999 columns=999
-set fillchars+=vert:\$
-set foldlevel=1000
-" set fileformat=unix
-" autocmd BufReadPost * :setlocal ff=unix
+" Font
+set guifont=Ubuntu\ Mono\ 12
 
-" Navigate in windows
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+" ------------------------------------------------------------------------- }}}
 
-set ignorecase " Ignore case sensitive
-nmap <silent> <C-A-d> :set hlsearch!<CR> " Hightlight words
+" SETTINGS & MAPPINGS ----------------------------------------------------- {{{
 
-" Indentation
-let g:indentLine_char = '│'
-inoremap {<CR> {<CR>}<C-o>O
+" Toggle hlsearch 
+nnoremap <nowait><silent> <C-c> :set hlsearch!<CR>
 
-vnoremap // y/<C-R>"<CR> " Search hightlighted word
+" You can split the window in Vim by typing :split or :vsplit.
+" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
+" Resize split windows using arrow keys by pressing:
+" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
 
-" ============================================================================
-" Project tree
-
+" NERDTree 
+let g:NERDTreeHijackNetrw=0
 let g:NERDTreeWinSize = 60
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '[a-zA-Z]*cache[a-zA-Z]*']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.s    wh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '[a-zA-Z]*cache[a-zA-Z]*']
 let NERDTreeShowHidden = 1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows = 0
 nmap <C-t> :NERDTreeToggle<CR>
-nmap <C-A-r> :NERDTreeFind<CR>
+nmap <C-f> :NERDTreeFind<CR>
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -186,106 +230,77 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+" Browse files 
+nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-g> :Ag<Cr>
 
-" ============================================================================
-" Browse files
+" Auto pairs only for )}]
+let g:AutoPairsFlyMode = 1
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage|build|dist'
-let g:ctrlp_match_window = 'results:100'
-
-
-" ============================================================================
-" Search selection
-let g:format_ack_search_from_selection_ignore_dirs = ['node_modules', 'dist', 'build', 'coverage', '.jestcache']
-
-" ============================================================================
 " GIT integration
-
 set updatetime=250
 let g:gitgutter_enabled = 1
 let vim_markdown_ipreview_github=1
 
-
-" ============================================================================
-" Es lint
-
-let g:ale_fixers = { 'javascript': ['eslint'] }
-"let g:ale_linters = { 'javascript': ['eslint'] }
-
-" let g:ale_fixers = {
-" \   'javascript': ['eslint'],
-" \   'html': ['prettier'],
-" \   'less': ['prettier'],
-" \   'json': ['prettier'],
-" \ }
-let g:ale_fix_on_save = 0
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_javascript_prettier_use_local_config = 1
-nmap <silent> <C-s-f> :set fileformat=unix<CR>
-nmap <silent> <C-s-l> :set foldlevel=100<CR>
-nmap <C-A-f> <Plug>(ale_fix) " Shortcut for lint fix
-
-
-" ============================================================================
-" Auto complete
-
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-
-
-" ============================================================================
-" JS libs
-
-let g:used_javascript_libs = 'underscore,react,ramda,d3,chai,jasmine,requirejs,angularjs'
-
-
-" ============================================================================
-" DocBlockr
-command! -register JsDoc call jsdoc#insert()
-let g:jsdoc_allow_input_prompt = 1
-let g:jsdoc_enable_es6 = 1
-let g:jsdoc_input_description = 1
-let g:jsdoc_additional_descriptions = 1
-
-" ============================================================================
 " Complete html, functions, strings...
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts,*.tsx,*.html.erb,*.md'
 
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
+" CocServer settings ---------------------------------------------------------
 
+let mapleader = " "
 
-" ============================================================================
-" Jump to required/imported file
+" Linting
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
 
-autocmd User Node
-  \ if &filetype == "javascript" |
-  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
-  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
-  \ endif 
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gnd <Plug>(coc-diagnostic-next)
 
-" ============================================================================
-" JS editor syntax
-let g:jsx_ext_required = 0
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>.  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>fq  <Plug>(coc-fix-current)
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
-" ============================================================================
-" Multiple cursor
+" Lists
+nmap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-k>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+" TODO avoid showing only errors on hover if error
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
 
-au BufRead * normal zR
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Make sure syntax highlighting is in sync
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
-" ****************************************************************************
-" End of Plugin config
-" ****************************************************************************
+" ------------------------------------------------------------------------- }}}
+
+" NOTES ------------------------------------------------------------------- {{{
+
+" TODOs
+" [] Search and replace across multiple files?
+
+" }}}
