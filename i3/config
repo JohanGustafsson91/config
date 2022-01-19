@@ -1,5 +1,4 @@
 # i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -7,11 +6,13 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:monospace 11
-font pango:System San Francisco Display 13
+#font pango:System San Francisco Display 13
+font pango:Ubuntu 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:System San Francisco Display 13
+#font pango:System San Francisco Display 13
+font pango:Ubuntu 13
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -23,7 +24,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -fullscreen -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -fullscreen -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"
 
 # change focus
 bindsym $mod+j focus left
@@ -75,8 +76,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Chrome"
-set $workspace2 "2: Code "
+set $workspace1 "1: Browser"
+set $workspace2 "2: Code"
 set $workspace9 "9: Slack"
 set $workspace10 "10: Spotify"
 
@@ -109,12 +110,10 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 exec spotify
 # exec google-chrome
 # exec slack
-# exec atom
 
 # Programs on workspaces
 assign [class="Google-chrome"] $workspace1
 assign [class="Gvim"] $workspace2
-# assign [class="Atom"] $workspace2
 assign [class="Slack"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
@@ -153,17 +152,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+set $bg-color 	         #20202C
+set $inactive-bg-color   #20202C
 set $text-color          #f3f4f5
-set $inactive-text-color #EOEOEO
-set $urgent-bg-color     #E53935
+set $inactive-text-color #605F76
+set $urgent-bg-color     #E95420
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $text-color        $bg-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused          $bg-color           $text-color        $bg-color            #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
@@ -174,12 +173,15 @@ bar {
         tray_output primary
 				position bottom
 				colors {
-					background $bg-color
-				  separator #757575
-					#                  border             background         text
-					focused_workspace  $bg-color          $bg-color          $text-color
-					inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-					urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+					background         $bg-color
+					statusline         $text-color
+				  separator          $inactive-text-color
+
+					#                  border               background         text
+					focused_workspace  $bg-color            $bg-color          $text-color
+					active_workspace   $inactive-text-color $bg-color          $inactive-text-color
+					inactive_workspace $inactive-bg-color   $inactive-bg-color $inactive-text-color
+					urgent_workspace   $urgent-bg-color     $urgent-bg-color   $text-color
 				}
 }
 
@@ -192,8 +194,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
-bindsym $mod+F5 exec node ~/.config/scripts/screen-brightness.js dec
-bindsym $mod+F6 exec node ~/.config/scripts/screen-brightness.js inc
+bindsym XF86MonBrightnessDown exec node ~/.config/scripts/screen-brightness.js dec
+bindsym XF86MonBrightnessUp exec node ~/.config/scripts/screen-brightness.js inc
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -217,11 +219,17 @@ exec_always xset r rate 200 50
 
 # Screens
 exec sh ~/.config/scripts/single-screen.sh
-exec node ~/Projects/disable-touchpad-while-writing/src/index.js
-exec xtrlock
 
 # Wallpapers
-# exec_always feh --bg-scale ~/Pictures/new-york.jpg
-exec_always feh --bg-scale ~/Pictures/bg.png
+exec_always feh --bg-scale ~/.config/i3/evolve.jpg
 
-# https://www.youtube.com/watch?v=8-S0cWnLBKg&list=PL5ze0DjYv5DbCv9vNEzFmP6sU7ZmkGzcf
+# FN on keychron
+exec_always echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
+# I3 GAPS
+bindsym $mod+Shift+d gaps inner all set 0; gaps outer all set 0;
+bindsym $mod+Shift+t gaps inner all set 10; gaps outer all set 0;
+
+gaps inner 10
+gaps outer 0
+for_window [class="^.*"] border pixel 1
